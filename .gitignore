@@ -17,5 +17,9 @@ nbproject/private/
 # VS Code
 .vscode/
 
-# Mac and Linux system files
+# macOS system files
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
