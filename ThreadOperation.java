@@ -29,4 +29,18 @@ public class ThreadOperation extends Thread {
         this.columnEnd = columnEnd;
     } // End of the CONSTRUCTOR
 	
+    
+    // This loops through the provided Matrix and for each [row][column], adds
+    // them between A and B to store in C.
+    @Override
+    public void run()
+    {
+        for (int row = rowStart; row < rowEnd; row++) {
+            for (int column = columnStart; column < columnEnd; column++) {
+                MatrixC[row][column] = MatrixA[row][column] 
+                + MatrixB[row][column];
+            } // End of nested FOR LOOP for column
+        } // End of FOR LOOP for row
+    } // End of the run() METHOD
+    
 } // End of CLASS ThreadOperation
