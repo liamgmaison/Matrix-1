@@ -23,13 +23,28 @@ import java.util.Scanner;
 
 public class Main
 {
-	public static void main(String[] args) 
-	{
-		
-		System.out.println();
-		
-		
-		
-	}
-
+    public static void main(String[] args)
+    {
+        // Recommended add. This checks if the user entered a usable file. If
+        // not, the program prints this message and stops. No crash. No hassle.
+        if (args.length != 1) {
+            System.out.println("You didn't provide a useable file!");
+            return;
+        } // End of IF conditional
+        
+        // Main block of the code.
+        try {
+            // Create a scanner to gather information from the file.
+            Scanner scanner = new Scanner(new File(args[0]));
+            
+            // These are important for storage
+            int rows = scanner.nextInt();
+            int columns = scanner.nextInt();
+            
+            // Always close the scanner
+            scanner.close();
+        } catch (Exception e) {
+            
+        }
+    }
 } // End of Main class
