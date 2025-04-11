@@ -45,6 +45,26 @@ public class Main
             scanner.close();
         } catch (Exception e) {
             
-        }
-    }
+        } // End of TRY-CATCH for input
+    } // End of main METHOD
+    
+    
+    // This method is the mechanism by which we take elements from the file and
+    // add them to a matrix that can be used in the main program for addition.
+    public static int[][] matrixFromFile(int rows, int columns, Scanner scanner)
+    {
+        // This creates a new matrix that is ready to take in the data.
+        int[][] matrix = new int[rows][columns];
+        // for this, I opted for using i and j because rows and columns were
+        // already used.
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                // For each iteration of i and j and combinations, those
+                // elements are stored in matrix.
+                matrix[i][j] = scanner.nextInt();
+            } // End of nested FOR loop
+        } // End of FOR loop
+        return matrix;
+    } // End of the matrixFromFile METHOD
+    
 } // End of Main class
