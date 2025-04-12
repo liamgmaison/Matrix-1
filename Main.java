@@ -33,9 +33,11 @@ threads compared to processes, etcetera,
 and connect these issues to 
 multi-threading.
 
-Multithreaded programs allow simultaneous operations, which can reduce overall
-computational load by freeing up resources that may otherwise be bottlenecked.
-Work is distributed efficiently across available cores and 
+Multi-threading reduces resource usage by allowing tasks to share memory and 
+execute in parallel. While I/O operations are slow and block program flow, 
+threads let us know that we are using CPU cycles efficiently. Compared to 
+processes, threads use less memory and switch context faster, making them ideal 
+for this kind of work.
 
 */
 
@@ -68,6 +70,8 @@ public class Main
             int[][] MatrixA = matrixFromFile(rows, columns, scanner);
             int[][] MatrixB = matrixFromFile(rows, columns, scanner);
             int[][] MatrixC = new int[rows][columns];
+            
+            scanner.close();
             
             // We need to be able to divide the matrix into quadrants.
             int middleRow = rows / 2;
