@@ -1,4 +1,21 @@
 /*
+Title: Main.java
+Name: William Maison-Bush
+Date: 11 April 2025
+Purpose: The purpose of this program is to demonstrate multithreaded matrix 
+        addition by dividing work among threads to process different matrix 
+        quadrants concurrently.
+Sources: Java - How to Program - Late Objects 11th Edition Deitel et al
+        https://www.youtube.com/watch?v=SleQwdOnLkE
+        https://www.youtube.com/watch?v=GNXz6H9g-ho
+        https://www.youtube.com/watch?v=zo-tA6HK5Rs
+        https://www.youtube.com/watch?v=SYKu49VCxuk
+        https://www.youtube.com/watch?v=ePSifPXvsPo
+        https://www.youtube.com/watch?v=j1lH3vOhucw
+        https://www.youtube.com/watch?v=Nf08BQbZHMQ
+
+2251 Example Files
+
 This code is provided to give you a
 starting place. It should be modified.
 No further imports are needed.
@@ -16,7 +33,11 @@ threads compared to processes, etcetera,
 and connect these issues to 
 multi-threading.
 
+Multithreaded programs allow simultaneous operations, which can overall
+reduce
+
 */
+
 import java.io.IOException;
 import java.io.File;
 import java.util.Scanner;
@@ -45,7 +66,7 @@ public class Main
             // Read in all the matrices and store them
             int[][] MatrixA = matrixFromFile(rows, columns, scanner);
             int[][] MatrixB = matrixFromFile(rows, columns, scanner);
-            int[][] MatrixC = matrixFromFile(rows, columns, scanner);
+            int[][] MatrixC = new int[rows][columns];
             
             // We need to be able to divide the matrix into quadrants.
             int middleRow = rows / 2;

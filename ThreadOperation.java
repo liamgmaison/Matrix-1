@@ -1,3 +1,20 @@
+/*
+Title: ThreadOperation.java
+Name: William Maison-Bush
+Date: 11 April 2025
+Purpose: The purpose of this class is to perform a segment of matrix addition 
+        concurrently using multithreading to enhance computational efficiency.
+Sources: Java - How to Program - Late Objects 11th Edition Deitel et al
+        https://www.youtube.com/watch?v=SleQwdOnLkE
+        https://www.youtube.com/watch?v=GNXz6H9g-ho
+        https://www.youtube.com/watch?v=zo-tA6HK5Rs
+        https://www.youtube.com/watch?v=SYKu49VCxuk
+        https://www.youtube.com/watch?v=ePSifPXvsPo
+        https://www.youtube.com/watch?v=j1lH3vOhucw
+        https://www.youtube.com/watch?v=Nf08BQbZHMQ
+2251 Example Files
+*/
+
 public class ThreadOperation extends Thread {
 
     // All of these are private and final because once the thread is 
