@@ -33,8 +33,9 @@ threads compared to processes, etcetera,
 and connect these issues to 
 multi-threading.
 
-Multithreaded programs allow simultaneous operations, which can overall
-reduce
+Multithreaded programs allow simultaneous operations, which can reduce overall
+computational load by freeing up resources that may otherwise be bottlenecked.
+Work is distributed efficiently across available cores and 
 
 */
 
@@ -104,13 +105,10 @@ public class Main
             System.out.println("Matrix C: ");
             print2dArray(MatrixC);
             
-            // Always close the scanner
-            scanner.close();
-            
         } catch (FileNotFoundException e) {
             System.out.println("ERROR! File cannot be opened!");
         } catch (InterruptedException e) {
-            System.out.println("ERROR!");
+            System.out.println("ERROR! Thread operation interrupted!");
         } // End of TRY-CATCH for input
     } // End of main METHOD
     
@@ -138,8 +136,9 @@ public class Main
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; 
                 column < matrix[row].length; column++) {
-                System.out.println();
+                System.out.printf("%4d", matrix[row][column]);
             } // End of nested FOR loop
+        System.out.println();
         } // End of FOR loop
     } // End of print2dArray METHOD
     
