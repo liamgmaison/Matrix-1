@@ -83,13 +83,13 @@ public class Main
             System.out.println("Matrix C: ");
             print2dArray(MatrixC);
             
-            
-            
-
             // Always close the scanner
             scanner.close();
+            
         } catch (FileNotFoundException e) {
             System.out.println("ERROR! File cannot be opened!");
+        } catch (InterruptedException e) {
+            System.out.println("ERROR!");
         } // End of TRY-CATCH for input
     } // End of main METHOD
     
