@@ -47,8 +47,43 @@ public class Main
             int[][] MatrixB = matrixFromFile(rows, columns, scanner);
             int[][] MatrixC = matrixFromFile(rows, columns, scanner);
             
+            // We need to be able to divide the matrix into quadrants.
             int middleRow = rows / 2;
             int middleColumn = columns / 2;
+            
+            // We now need to create the threads for each quadrant
+            Thread t00 = new ThreadOperation(MatrixA, MatrixB, MatrixC, 
+                0, 0, middleRow, middleColumn);
+            Thread t01 = new ThreadOperation(MatrixA, MatrixB, MatrixC,
+                0, middleColumn, middleRow, columns);
+            Thread t10 = new ThreadOperation(MatrixA, MatrixB, MatrixC,
+                middleRow, 0, rows, middleColumn);
+            Thread t11 = new ThreadOperation(MatrixA, MatrixB, MatrixC,
+                middleRow, middleColumn, rows, columns);
+            
+            // Start up the threads
+            t00.start();
+            t01.start();
+            t10.start();
+            t11.start();
+            
+            // All threads need to process and complete
+            t00.join();
+            t01.join();
+            t10.join();
+            t11.join();
+            
+            // Print the results of the matrix opertaions
+            System.out.println("Matrix A: ");
+            print2dArray(MatrixA);
+            
+            System.out.println("Matrix B: ");
+            print2dArray(MatrixB);
+            
+            System.out.println("Matrix C: ");
+            print2dArray(MatrixC);
+            
+            
             
 
             // Always close the scanner
