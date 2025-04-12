@@ -20,6 +20,7 @@ multi-threading.
 import java.io.IOException;
 import java.io.File;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main
 {
@@ -41,10 +42,19 @@ public class Main
             int rows = scanner.nextInt();
             int columns = scanner.nextInt();
             
+            // Read in all the matrices and store them
+            int[][] MatrixA = matrixFromFile(rows, columns, scanner);
+            int[][] MatrixB = matrixFromFile(rows, columns, scanner);
+            int[][] MatrixC = matrixFromFile(rows, columns, scanner);
+            
+            int middleRow = rows / 2;
+            int middleColumn = columns / 2;
+            
+
             // Always close the scanner
             scanner.close();
-        } catch (Exception e) {
-            
+        } catch (FileNotFoundException e) {
+            System.out.println("ERROR! File cannot be opened!");
         } // End of TRY-CATCH for input
     } // End of main METHOD
     
