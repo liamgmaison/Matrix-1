@@ -67,4 +67,14 @@ public class Main
         return matrix;
     } // End of the matrixFromFile METHOD
     
+    public static void print2dArray(int[][] matrix)
+    {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; 
+                column < matrix[row].length; column++) {
+                System.out.println();
+            } // End of nested FOR loop
+        } // End of FOR loop
+    } // End of print2dArray METHOD
+    
 } // End of Main class
